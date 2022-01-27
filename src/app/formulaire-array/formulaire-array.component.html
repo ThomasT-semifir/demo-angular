@@ -8,7 +8,10 @@
         <div *ngFor="let membre of this.membresArray.controls; let i = index">
             <label>
                 Membre {{i+1}}:
-                <input type="text" [formControlName]="i">
+                <div [formGroupName]="i">
+                    <label for="nom{{i}}">nom:</label><input formControlName="nom" id="nom{{i}}" type="text">
+                    <label for="pseudo{{i}}">pseudo: </label><input formControlName="pseudo" id="pseudo{{i}}" type="text">
+                </div>
             </label>
             <button type="button" (click)="supprimerMembre(i)">X</button>
         </div>

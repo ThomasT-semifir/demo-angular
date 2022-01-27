@@ -14,8 +14,15 @@ export class FormulaireArrayComponent implements OnInit {
     this.equipe = new FormGroup({
       nomEquipe: new FormControl(),
       membres: new FormArray([
-        new FormControl()
+        this.formulaireMembreFactory()
       ])
+    })
+  }
+
+  private formulaireMembreFactory(){
+    return new FormGroup({
+      nom: new FormControl(),
+      pseudo: new FormControl()
     })
   }
   
@@ -27,7 +34,7 @@ export class FormulaireArrayComponent implements OnInit {
   }
 
   ajouterMembre(): void {
-    this.membresArray.push(new FormControl())
+    this.membresArray.push(this.formulaireMembreFactory())
   }
 
   onSubmit(): void {
