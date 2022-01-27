@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire-array',
@@ -12,7 +12,7 @@ export class FormulaireArrayComponent implements OnInit {
 
   constructor() {
     this.equipe = new FormGroup({
-      nomEquipe: new FormControl(),
+      nomEquipe: new FormControl("", Validators.required),
       membres: new FormArray([
         this.formulaireMembreFactory()
       ])
@@ -22,7 +22,8 @@ export class FormulaireArrayComponent implements OnInit {
   private formulaireMembreFactory(){
     return new FormGroup({
       nom: new FormControl(),
-      pseudo: new FormControl()
+      pseudo: new FormControl(),
+      mail: new FormControl('', [Validators.email, Validators.required])
     })
   }
   
@@ -38,10 +39,15 @@ export class FormulaireArrayComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.equipe.value);
+    
+    console.log(this.equipe.valid);
+    if(this.equipe.valid){
+      console.log(this.equipe.value);
+    }
   }
 
   supprimerMembre(index: number):void{
+
     this.membresArray.removeAt(index)
   }
 

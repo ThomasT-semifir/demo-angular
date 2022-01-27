@@ -3,6 +3,11 @@
     <label>
         Equipe:
         <input type="text" formControlName="nomEquipe">
+        <div *ngIf="equipe.controls['nomEquipe'].invalid && (equipe.controls['nomEquipe'].dirty || equipe.controls['nomEquipe'].touched)" class="alert">
+            <div *ngIf="equipe.controls['nomEquipe'].errors">
+            Veuillez entrer un nom d'équipe
+          </div>
+        </div>
     </label>
     <div formArrayName="membres">
         <div *ngFor="let membre of this.membresArray.controls; let i = index">
@@ -11,11 +16,16 @@
                 <div [formGroupName]="i">
                     <label for="nom{{i}}">nom:</label><input formControlName="nom" id="nom{{i}}" type="text">
                     <label for="pseudo{{i}}">pseudo: </label><input formControlName="pseudo" id="pseudo{{i}}" type="text">
+                    <label for="mail{{i}}">email: </label><input formControlName="mail" id="mail{{i}}" type="email" >
                 </div>
+                <p *ngIf="this.membresArray.controls[i].get('mail')!.invalid && this.membresArray.controls[i].get('mail')!.touched" class="alert">Le mail n'est pas valide</p>
             </label>
+            <div *ngIf="this.membresArray.controls[i].invalid && (this.membresArray.controls[i].dirty || this.membresArray.controls[i].get('mail')!.touched)" class="alert">
+                Veuillez vérifier les informations de ce membre
+            </div>
             <button type="button" (click)="supprimerMembre(i)">X</button>
         </div>
     </div>
     <button type="button" (click)="ajouterMembre()">Ajouter un membre</button>
-    <button type="submit">Enregistrer</button>
+    <button type="submit" [disabled]="!this.equipe.valid">Enregistrer</button>
 </form>
