@@ -1,0 +1,18 @@
+<form [formGroup]="equipe" (ngSubmit)="onSubmit()">
+    <h3>Mon équipe: </h3>
+    <label>
+        Equipe:
+        <input type="text" formControlName="nomEquipe">
+    </label>
+    <div formArrayName="membres">
+        <div *ngFor="let membre of this.membresArray.controls; let i = index">
+            <label>
+                Membre {{i+1}}:
+                <input type="text" [formControlName]="i">
+            </label>
+            <button type="button" (click)="supprimerMembre(i)">X</button>
+        </div>
+    </div>
+    <button type="button" (click)="ajouterMembre()">Ajouter un membre</button>
+    <button type="submit">Enregistrer</button>
+</form>

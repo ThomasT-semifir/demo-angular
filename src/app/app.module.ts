@@ -9,6 +9,7 @@ import { NomDynamiqueComponent } from './nom-dynamique/nom-dynamique.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StylesComponent } from './styles/styles.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { FormulaireArrayComponent } from './formulaire-array/formulaire-array.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     UtilisateurComponent,
     NomDynamiqueComponent,
     StylesComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    FormulaireArrayComponent
   ],
   imports: [
     BrowserModule,
