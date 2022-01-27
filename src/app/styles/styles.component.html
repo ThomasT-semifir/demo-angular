@@ -1,0 +1,24 @@
+<p [ngStyle]="{'color': getColor()}">Je suis rose</p>
+
+<p [ngClass]="{
+  'rouge': !check,
+  'vert': check  
+}" (click)="check = !check">Je suis {{!check? "rouge" : "vert"}}</p>
+
+<p *ngIf="check">Coucou</p>
+<p *ngIf="!check">Pas Coucou</p>
+
+<div *ngIf="check; then vu else vuunpeu"></div>
+    <ng-template #vu>
+        <p>tu me vois</p>
+    </ng-template>
+    <ng-template #vuunpeu>
+        <p style="color: lightgrey">tu me vois un peu</p>
+    </ng-template>
+
+
+    <!-- *ngFor -->
+    <!-- *ngIf -->
+    <!-- ngStyle -->
+    <!-- ngClass -->
+    <!-- ng-template -->

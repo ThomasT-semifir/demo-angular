@@ -1,0 +1,15 @@
+<app-nom-dynamique></app-nom-dynamique>
+
+{{ variableDemo }}
+{{ 2 * 8 }}
+<div *ngFor="let utilisateur of utilisateurs">
+    <img [src]="utilisateur.photoUrl" style="height: 100px;">
+    <p >L'utilisateur {{utilisateur.nom}} a {{utilisateur.age}} ans</p> 
+    <button (click)="direBonjour(utilisateur)" >Dire bonjour</button>
+    <button (click)="testEvent($event)">test event</button>
+</div>
+
+
+
+<button (click)="ajouterUtilisateur()">ajotuer un utilisateur</button>
+<button (click)="changerPhoto()">changer photo</button>

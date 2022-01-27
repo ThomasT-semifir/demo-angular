@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)] = "utilisateur.nom">
+{{utilisateur.nom | lowercase}}
+<p>{{date}}</p>
+<p>{{date | date:"dd/MM/yyyy"}}</p>
+<p>{{date | date:'fullDate' | uppercase}}</p>
+<p>{{0.25 | percent }}</p>
+<p>{{3.14159654 | number:"1.1-2"}}</p>
+<p>{{utilisateur | json }}</p>
+<button (click)="changeUtilisateur()">clique</button>

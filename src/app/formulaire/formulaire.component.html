@@ -1,0 +1,25 @@
+<form [formGroup]="profilUtilisateur" (ngSubmit)="onSubmitFirst()">
+    <h3>Premier formulaire</h3>
+    <label>
+        nom:
+        <input type="text" formControlName="nom">
+    </label>
+    <label>
+        prénom:
+        <input type="text" formControlName="prenom">
+    </label>
+    <button type="submit">Envoyer à l'autre formulaire</button>
+</form>
+
+<form [formGroup]="deuxiemeProfilUtilisateur" (ngSubmit)="onSubmitSecond()">
+    <h3>Second formulaire</h3>
+    <label>
+        nom:
+        <input type="text" formControlName="nom">
+    </label>
+    <label>
+        prénom:
+        <input type="text" formControlName="prenom">
+    </label>
+    <button type="submit">Afficher en console</button>
+</form>
