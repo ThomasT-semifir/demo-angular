@@ -1,0 +1,10 @@
+<div class="parent">
+    <h1>nombre d'articles dans ma liste: {{listeArticles.length}}</h1>
+    <div class="container" >
+        <div *ngFor="let article of listeArticles; let i = index;">
+            <app-detail-article (ajouterCommentaire)="addComment($event, i)" [articleEnfant]="article"></app-detail-article>
+            {{article.commentaire}}
+        </div>
+    </div>
+    <button (click)="afficher()">log articles</button>
+</div>

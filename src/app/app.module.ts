@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StylesComponent } from './styles/styles.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormulaireArrayComponent } from './formulaire-array/formulaire-array.component';
+import { ListeArticlePage } from './article/pages/liste-article/liste-article.page';
+import { DetailArticleComponent } from './article/components/detail-article/detail-article.component';
+import { CreerArticleComponent } from './article/creer-article/creer-article.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { FormulaireArrayComponent } from './formulaire-array/formulaire-array.co
     NomDynamiqueComponent,
     StylesComponent,
     FormulaireComponent,
-    FormulaireArrayComponent
+    FormulaireArrayComponent,
+    ListeArticlePage,
+    DetailArticleComponent,
+    CreerArticleComponent
   ],
   imports: [
     BrowserModule,

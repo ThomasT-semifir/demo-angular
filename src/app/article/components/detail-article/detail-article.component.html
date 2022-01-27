@@ -1,0 +1,6 @@
+<div style="border: 1px solid black; background-color: yellow;">
+    <p>{{articleEnfant.nom}}</p>
+    <p>{{articleEnfant.prix}}</p>
+</div>
+<button type="button" (click)="envoyerCommentaire()">OK commentaire</button>
+<input type="text" [(ngModel)]="commentaire">

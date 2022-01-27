@@ -1,0 +1,9 @@
+.parent{
+    background-color: red;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
